@@ -1,0 +1,189 @@
+/* Neo-Brutalist Style - Applied to Debate App with Noto Sans KR */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap");
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Noto Sans KR", sans-serif;
+    color: #333;
+    margin: 0;
+    line-height: 1.6em;
+    font-size: 15px;
+    background: repeating-linear-gradient(45deg, #aaa, #aaa 2px, #ccc 2px, #ccc 6px);
+    background-attachment: fixed;
+}
+
+.dashboard {
+    display: block;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid;
+    width: 1000px;
+    max-width: calc(100% - 40px);
+    background: #ddd;
+    box-shadow: 6px 6px #333;
+}
+
+.dashboard > div {
+    margin-bottom: 25px;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border: 2px solid;
+    box-shadow: inherit;
+}
+
+.dashboard > div:hover {
+  background: #fff;
+}
+
+h2 {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 0;
+    padding: 5px 10px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid;
+    border-top: 2px solid;
+    text-align: center;
+}
+
+#chatbox {
+    border: 2px solid #333;
+    height: 450px;
+    overflow-y: scroll;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #f7f7f7;
+}
+
+.message {
+    margin-bottom: 15px;
+    line-height: 1.5;
+    padding: 10px 15px;
+    border: 2px solid #333;
+    box-shadow: 3px 3px #333;
+    max-width: 90%;
+    word-break: keep-all;
+}
+
+.user-message {
+    background-color: #c4d9ff;
+    margin-left: auto;
+}
+
+.ai-message {
+    background-color: #f7f7f7;
+    margin-right: auto;
+}
+
+.system-message {
+    text-align: center;
+    color: #333;
+    background-color: #fffac4;
+    font-style: italic;
+}
+
+.input-area {
+    display: flex;
+}
+
+#userInput {
+    flex-grow: 1;
+    padding: 12px;
+    border: 2px solid #333;
+    font-size: 1em;
+    font-family: inherit;
+    background: #fff;
+}
+#userInput:focus {
+    outline: 2px solid #333;
+    background: #eee;
+}
+
+#sendButton, .stance-buttons button {
+    appearance: none;
+    border: 2px solid #333;
+    color: #333;
+    font-family: inherit;
+    font-size: 1em;
+    font-weight: 700;
+    padding: 12px 20px;
+    text-align: center;
+    position: relative;
+    background: #eee;
+    margin-left: -2px;
+    cursor: pointer;
+    transition: all 0.2s;
+    flex-shrink: 0;
+}
+
+#sendButton:hover, .stance-buttons button:hover {
+    background: #333;
+    color: #eee;
+    box-shadow: 4px 4px #999;
+}
+
+#sendButton:active, .stance-buttons button:active {
+    box-shadow: 1px 1px #999;
+    transform: translate(3px, 3px);
+}
+
+#sendButton:disabled {
+    background: #ccc;
+    color: #888;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.stance-buttons button {
+  margin-left: 0;
+  margin-right: 15px;
+  margin-bottom: 10px;
+}
+
+.status-bar {
+    padding: 10px;
+    border: 2px solid #333;
+    background: #fffac4;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+}
+
+#result-area {
+    line-height: 1.7;
+}
+#result-area h2 {
+    background: #333;
+    color: #eee;
+}
+#result-area h3 {
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+    margin-top: 30px;
+}
+#result-area hr {
+    border: 0;
+    height: 2px;
+    background-color: #333;
+}
+.topic-box {
+     background-color: #f7f7f7;
+     padding: 20px;
+     border: 2px solid #333;
+     margin-bottom: 25px;
+}
+.topic-box p {
+    margin-top: 0;
+}
+.topic-box .scenario {
+    background-color: #eef4fd; 
+    padding: 10px; 
+    border-left: 3px solid #4a90e2;
+}
