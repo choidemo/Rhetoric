@@ -36,7 +36,7 @@ export default function Home() {
     appendMessage('학생', openingMessage);
   };
 
-  const handleApiResponse = (data: any) => {
+  const handleApiResponse = (data: { error?: string; response?: string }) => {
     if (data.error) {
       appendMessage('시스템', data.error);
     } else {
@@ -78,8 +78,8 @@ export default function Home() {
         appendMessage('학생', studentResponse);
         setCounselingTurnsLeft(counselingTurnsLeft - 1);
       }
-    } catch (error: any) {
-      appendMessage('시스템', `오류: ${error.message}`);
+    } catch (error: unknown) {
+      appendMessage('시스템', `오류: ${error instanceof Error ? error.message : String(error)}`);
     } finally {
       setIsLoading(false);
     }
@@ -130,8 +130,8 @@ export default function Home() {
           setTeacherEvaluationResult(htmlResult);
         }
       }
-    } catch (error: any) {
-      appendMessage('시스템', `오류: ${error.message}`);
+    } catch (error: unknown) {
+      appendMessage('시스템', `오류: ${error instanceof Error ? error.message : String(error)}`);
     } finally {
       setIsLoading(false);
     }
@@ -142,7 +142,7 @@ export default function Home() {
       <div className="topic-box">
         <h2>상담 시뮬레이션: 극단적 이기주의 학생편</h2>
         <p className="scenario">
-          <strong>상황 제시:</strong> 당신은 중학교 교사입니다. 최근 학교 규칙을 상습적으로 위반하고, 친구들에게 피해를 주면서도 전혀 죄책감을 느끼지 않는 학생 '김이득'과 상담을 진행해야 합니다. 김이득은 '들키지 않으면 괜찮다. 나에게 이득이 되는 것이 최고다'라는 가치관을 가지고 있습니다.
+          <strong>상황 제시:</strong> 당신은 중학교 교사입니다. 최근 학교 규칙을 상습적으로 위반하고, 친구들에게 피해를 주면서도 전혀 죄책감을 느끼지 않는 학생 &apos;김이득&apos;과 상담을 진행해야 합니다. 김이득은 &apos;들키지 않으면 괜찮다. 나에게 이득이 되는 것이 최고다&apos;라는 가치관을 가지고 있습니다.
         </p>
         <p><strong>상담 목표:</strong> 학생의 비합리적 신념에 균열을 내고, 관계의 중요성을 일깨워주며, 행동 변화의 작은 계기를 마련하는 것.</p>
       </div>

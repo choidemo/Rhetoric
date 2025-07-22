@@ -50,7 +50,7 @@ async function callGeminiAPI(prompt: string, apiUrl: string) {
       console.log('API Success Response with empty content:', data);
       return '[오류 발생] AI가 응답을 생성했지만 내용이 비어있습니다. 다시 시도해주세요.';
     }
-  } catch (e: any) {
+  } catch (e: unknown) {
     console.error('API 호출 오류:', e);
     return NextResponse.json(
       {
